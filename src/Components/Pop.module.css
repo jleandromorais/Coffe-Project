@@ -1,0 +1,150 @@
+.buyButton {
+  padding: 10px;
+  background-color: #6F4E37;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.popularNow {
+    background-color: #f5f0e5;
+    padding: 60px 0;
+    position: relative;
+  }
+  
+  .waveDivider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-image: url('images/wave.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-100%);
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #5a3921;
+    margin-bottom: 40px;
+  }
+  
+  .coffeeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .coffeeCard {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .coffeeCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .coffeeImage {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .coffeeImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff8c42;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .coffeeInfo {
+    padding: 20px;
+  }
+  
+  .coffeeInfo h3 {
+    color: #5a3921;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .tagHot {
+    background-color: #ff8c42;
+    color: white;
+  }
+  
+  .tagCold {
+    background-color: white;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  @media (max-width: 768px) {
+    .coffeeGrid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 0 15px;
+    }
+    
+    .sectionTitle {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .coffeeGrid {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }

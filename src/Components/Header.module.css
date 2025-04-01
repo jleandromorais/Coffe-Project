@@ -1,0 +1,158 @@
+/* Variáveis de cor */
+:root {
+    --beige: #FDF6EC;
+    --dark-brown: #3D2B1F;
+    --orange: #F4A261;
+    --white: #FFFFFF;
+    --black: #000000;
+  }
+  
+  /* Estilos do Header */
+  .header {
+    background-color: var(--beige);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .logoIcon {
+    color: var(--dark-brown);
+    font-size: 1.8rem;
+    position: relative;
+  }
+  
+  .logoIcon::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    right: -0.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--orange);
+    border-radius: 50%;
+  }
+  
+  .logoText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .navLink:hover {
+    color: var(--orange);
+  }
+  
+  .navLink:hover::after, 
+  .active {
+    color: var(--dark-brown);
+    font-weight: 600;
+  }
+  
+  .navLink:hover::after, 
+  .active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange);
+  }
+  
+  .active {
+    position: relative;
+  }
+  
+  .active::after {
+    display: block; /* Mantém visível para o item ativo */
+  }
+  
+  .navLink:hover {
+    position: relative;
+  }
+  
+  .headerIcons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--black);
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .iconBtn:hover {
+    color: var(--orange);
+  }
+  
+  .cartCount {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-brown);
+    cursor: pointer;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+  
+    .mobileMenuBtn {
+      display: block;
+    }
+  
+    .headerIcons {
+      gap: 1rem;
+    }
+  }
