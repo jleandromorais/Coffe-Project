@@ -17,39 +17,7 @@ const ShoppingCart: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // Carregar itens iniciais no carrinho
-  useEffect(() => {
-    const initialItems: CartItem[] = [
-      {
-        id: 1,
-        name: "Adidas T-Shirt",
-        description: "Camiseta masculina Adidas",
-        category: "Roupas",
-        price: 391.00,
-        quantity: 1,
-        image: "https://via.placeholder.com/80"
-      },
-      {
-        id: 2,
-        name: "Adidas Socks",
-        description: "Meias masculinas Adidas",
-        category: "Acessórios",
-        price: 77.00,
-        quantity: 1,
-        image: "https://via.placeholder.com/80"
-      },
-      {
-        id: 3,
-        name: "Adidas Shoes",
-        description: "Tênis masculino Adidas",
-        category: "Calçados",
-        price: 604.00,
-        quantity: 1,
-        image: "https://via.placeholder.com/80"
-      }
-    ];
-    setCartItems(initialItems);
-  }, []);
-
+  
   const updateQuantity = (itemId: number, newQuantity: number) => {
     setCartItems(prevItems =>
       prevItems.map(item =>

@@ -5,49 +5,53 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import capputino from '../img/11135999.png';
 import ice from '../img/images.jpg';
 import mocho from '../img/48956_shutterstock-686698384.webp'
-import { useCart } from './useCart';
+import { useShoppingCart } from '../hooks/useCart';
 // Defina o tipo para os dados do café
 export interface CoffeeItem {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: number;
   rating: string;
   image: string;
   tag: 'hot' | 'cold';
+
 }
 
 
 export const Pop: React.FC = () => {
-  const { addToCart } = useCart();
+  const { addToCart } = useShoppingCart();
 
   const coffeeItems: CoffeeItem[] = [
     {
       id: 1,
       name: 'Cappuccino',
       description: 'Espresso with steamed milk and foam',
-      price: '$4.99',
+      price: 4.99,
       rating: '4.8',
       image: capputino,
-      tag: 'hot'
+      tag: 'hot',
+
     },
     {
       id: 2,
       name: 'Iced Latte',
       description: 'Espresso with cold milk and ice',
-      price: '$5.49',
+      price: 5.49,
       rating: '4.7',
       image: ice,
-      tag: 'cold'
+      tag: 'cold',
+
     },
     {
       id: 3,
       name: 'Mocha',
       description: 'Espresso with chocolate and steamed milk',
-      price: '$5.29',
+      price: 5.29,
       rating: '4.9',
       image: mocho,
-      tag: 'hot'
+      tag: 'hot',
+
     }
   ];
 
@@ -73,7 +77,7 @@ export const Pop: React.FC = () => {
                   <span className={`${styles.tag} ${styles[coffee.tag]}`}>
                     {coffee.tag === 'hot' ? 'Hot' : 'Cold'}
                   </span>
-                  <span className={styles.price}>{coffee.price}</span>
+                  <span className={styles.price}>R${coffee.price}</span>
                 </div>
                 <button 
         className={styles.buyButton}
