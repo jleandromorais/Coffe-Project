@@ -1,21 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Header } from './Components/Header'
-import { Hero } from './Components/Hero'
-import { Pop } from './Components/Pop'
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header } from './Components/Header';
+import { Hero } from './Components/Hero';
+import { Pop } from './Components/Pop';
+import ShoppingCart from './Components/Cart';
 
+function App() {
   return (
-    <>
-      <Header/>
-      <Hero/>
-      <Pop/>
-      <Cart/>
-      
-    </>
-  )
+    <Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Pop />
+            </>
+          } />
+          <Route path="/cart" element={<ShoppingCart />} />
+        </Routes>
+      </main>
+    </Router>
+  );
 }
 
-export default App
+export default App;
