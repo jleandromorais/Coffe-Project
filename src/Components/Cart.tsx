@@ -94,10 +94,14 @@ const ShoppingCart: React.FC = () => {
             ))}
           </div>
 
-          <div className={styles.cartSummary    }>
-            <h3>Total: R$ {calculateTotal().toFixed(2)}</h3>
-            <button className={styles.checkoutButton}>Finalizar Compra</button>
-          </div>
+          <div className={styles.cartSummary}>
+    <h3>Total: R$ {calculateTotal().toFixed(2)}</h3>
+    <div className={styles.btnGroup}>
+        <button className={styles.btnClear}>Limpar Carrinho</button>
+        <button className={styles.checkoutButton}>Finalizar Compra</button>
+    </div>
+</div>
+
         </>
       ) : (
         <p className={styles.emptyCartMessage}>Seu carrinho está vazio</p>
