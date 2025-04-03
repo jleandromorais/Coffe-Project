@@ -6,7 +6,6 @@ import capputino from '../img/11135999.png';
 import ice from '../img/images.jpg';
 import mocho from '../img/48956_shutterstock-686698384.webp'
 import { useShoppingCart } from '../hooks/useCart';
-// Defina o tipo para os dados do café
 export interface CoffeeItem {
   id: number;
   name: string;
@@ -81,7 +80,7 @@ export const Pop: React.FC = () => {
                 </div>
                 <button 
         className={styles.buyButton}
-        onClick={() => addToCart(coffee)} // ← Agora funciona!
+        onClick={() => addToCart(coffee)} 
       >
         Add to Cart</button>
               </div>

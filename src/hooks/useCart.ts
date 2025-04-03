@@ -10,14 +10,13 @@ export interface CartItem {
   image: string;
 }
 
+
 export const useShoppingCart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    // Carrega do localStorage ao inicializar
     const savedItems = localStorage.getItem('cartItems');
     return savedItems ? JSON.parse(savedItems) : [];
   });
 
-  // Salva no localStorage sempre que cartItems mudar
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);

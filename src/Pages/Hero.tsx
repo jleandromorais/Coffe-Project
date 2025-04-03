@@ -5,12 +5,10 @@ import Cafe from '../Components/pngtree-cappuccino-png-transparent-layer-materia
 import { useEffect, useRef } from 'react';
 
 export function Hero(){
-    // Corrigindo a tipagem da ref
     const imageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (imageRef.current) {
-            // Agora o TypeScript sabe que imageRef.current é um HTMLDivElement
             imageRef.current.style.animation = `${styles.slideIn} 1s ease-out forwards`;
         }
     }, []);
