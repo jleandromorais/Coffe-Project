@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Pop.module.css';
+import styles from '../styles/Pop.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import capputino from '../img/11135999.png';

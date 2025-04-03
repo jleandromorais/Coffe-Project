@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './Components/Header';
-import { Hero } from './Components/Hero';
-import { Pop } from './Components/Pop';
-import ShoppingCart from './Components/Cart';
+import { Header } from './Pages/Header';
+import { Hero } from './Pages/Hero';
+import { Pop } from './Pages/Pop';
+import ShoppingCart from './Pages/Cart';
 
 function App() {
   return (

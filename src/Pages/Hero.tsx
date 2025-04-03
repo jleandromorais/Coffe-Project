@@ -1,7 +1,7 @@
-import styles from './Hero.module.css'
+import styles from '../styles/Hero.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faStar, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
-import Cafe from './pngtree-cappuccino-png-transparent-layer-material-png-image_4255197 (1).png';
+import Cafe from '../Components/pngtree-cappuccino-png-transparent-layer-material-png-image_4255197 (1).png';
 import { useEffect, useRef } from 'react';
 
 export function Hero(){

@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import styles from './Cart.module.css';
+import styles from '../styles/Cart.module.css';
+import { useShoppingCart } from '../hooks/useCart'; // Ajuste o caminho
 
-// Definição do tipo para os itens do carrinho
-interface CartItem {
-  id: number;
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+
 
 const ShoppingCart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
-  // Carregar itens iniciais no carrinho
-  
-  const updateQuantity = (itemId: number, newQuantity: number) => {
-    setCartItems(prevItems =>
-      prevItems.map(item =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
-  const removeItem = (itemId: number) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== itemId));
-  };
-
-  const calculateTotal = (): number => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-  };
+  const {
+    cartItems,
+    updateQuantity,
+    removeItem,
+    calculateTotal,
+    clearCart
+  } = useShoppingCart();
 
   return (
     <div className={styles.cartContainer}>

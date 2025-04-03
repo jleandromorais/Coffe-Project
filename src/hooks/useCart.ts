@@ -1,8 +1,26 @@
-import { useState } from 'react';
-import { CartItem } from './CartItem'; // Ajuste o caminho conforme necessário
+// useShoppingCart.ts
+import { useState, useEffect } from 'react';
+
+export interface CartItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 
 export const useShoppingCart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    // Carrega do localStorage ao inicializar
+    const savedItems = localStorage.getItem('cartItems');
+    return savedItems ? JSON.parse(savedItems) : [];
+  });
+
+  // Salva no localStorage sempre que cartItems mudar
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const updateQuantity = (itemId: number, newQuantity: number): void => {
     setCartItems(prevItems =>
@@ -36,12 +54,17 @@ export const useShoppingCart = () => {
     });
   };
 
+  const clearCart = (): void => {
+    setCartItems([]);
+  };
+
   return {
     cartItems,
     addToCart,
     updateQuantity,
     removeItem,
     calculateTotal,
+    clearCart,
     totalItems: cartItems.reduce((sum, item) => sum + item.quantity, 0),
     totalPrice: calculateTotal()
   };
